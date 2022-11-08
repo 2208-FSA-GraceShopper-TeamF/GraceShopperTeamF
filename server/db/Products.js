@@ -1,10 +1,7 @@
-const { appendFileSync } = require("fs");
 const Sequelize = require("sequelize");
 const db = require("./database");
 
-//Here is some starter code for defining your database table!
-
-module.exports = db.define("Example", {
+const Products = db.define("Products", {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -19,14 +16,31 @@ module.exports = db.define("Example", {
       notEmpty: true,
     },
   },
-
   price: {
-    type: Sequelize.FLOAT,
+    type: Sequelize.DOUBLE,
+    allowNull: false,
+    validate: {
+      notEmptry: true,
+      min: 0.01,
+    }
   },
-
+  quantity: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    validate: {
+      notEmptry: true,
+      min: 0,
+    }
+  },
   imageUrl: {
     type: Sequelize.TEXT,
     defaultValue:
       "https://c8.alamy.com/comp/2EAK9WN/cartoon-cup-of-tea-with-happy-smiling-face-isolated-on-white-2EAK9WN.jpg",
   },
+  description: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
 });
+
+module.exports = Products;
