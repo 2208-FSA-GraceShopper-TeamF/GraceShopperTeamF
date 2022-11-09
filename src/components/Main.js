@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { AllExamples } from "./index";
+import { AllProducts } from "./index";
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 
