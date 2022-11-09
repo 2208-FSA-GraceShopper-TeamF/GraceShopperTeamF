@@ -1,10 +1,7 @@
-import exampleSlice from "../reducers/tumblerSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
 const store = configureStore({
-  reducer: {
-    examples: exampleSlice.reducer,
-  },
+  reducer: {},
 });
 
 export default store;

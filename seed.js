@@ -1,15 +1,16 @@
 const { green, red } = require("chalk");
-const { db, products } = require("./server/db");
+const { db, Products } = require("./server/db");
 
 //Start of seed data
 
-const products = [
+const ProductsData = [
   {
     name: "10 oz. Ringneck",
     color: "Black",
     price: 12.99,
     size: 10,
     description: "This is a description",
+    quantity: 9,
     imageUrl:
       "https://res.cloudinary.com/business-products/image/upload/v1667199533/products/images/large/LTM7102--d57bb153-85be-47fe-9574-b315a56bef6d.webp",
   },
@@ -19,6 +20,7 @@ const products = [
     price: 12.99,
     size: 10,
     description: "This is a description",
+    quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7111.png",
   },
   {
@@ -27,6 +29,7 @@ const products = [
     price: 9.99,
     size: 12,
     description: "This is a description",
+    quantity: 9,
     imageUrl:
       "https://res.cloudinary.com/business-products/image/upload/v1667199718/products/images/large/LTM852--62e32c27-7287-404b-9e05-d77b251940a1.webp",
   },
@@ -36,6 +39,7 @@ const products = [
     price: 9.99,
     size: 12,
     description: "This is a description",
+    quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM865.png",
   },
   {
@@ -44,6 +48,7 @@ const products = [
     price: 11.99,
     size: 15,
     description: "This is a description",
+    quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LCM102.png",
   },
   {
@@ -52,6 +57,7 @@ const products = [
     price: 11.99,
     size: 15,
     description: "This is a description",
+    quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LCM113.png",
   },
   {
@@ -60,6 +66,7 @@ const products = [
     price: 11.99,
     size: 15,
     description: "This is a description",
+    quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LCM112.png",
   },
   {
@@ -68,6 +75,7 @@ const products = [
     price: 13.99,
     size: 20,
     description: "This is a description",
+    quantity: 9,
     imageUrl:
       "https://res.cloudinary.com/business-products/image/upload/v1667199582/products/images/large/LTM7216--d45636af-814c-4834-931e-a8bfa9866940.webp",
   },
@@ -77,6 +85,7 @@ const products = [
     price: 13.99,
     size: 20,
     description: "This is a description",
+    quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7219.png",
   },
   {
@@ -85,6 +94,7 @@ const products = [
     price: 13.99,
     size: 20,
     description: "This is a description",
+    quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7214.png",
   },
   {
@@ -93,6 +103,7 @@ const products = [
     price: 16.99,
     size: 30,
     description: "This is a description",
+    quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7316.png",
   },
   {
@@ -101,6 +112,7 @@ const products = [
     price: 16.99,
     size: 30,
     description: "This is a description",
+    quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7317.png",
   },
   {
@@ -109,6 +121,7 @@ const products = [
     price: 16.99,
     size: 30,
     description: "This is a description",
+    quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7318.png",
   },
 ];
@@ -119,8 +132,8 @@ const seed = async () => {
   try {
     await db.sync({ force: true });
     await Promise.all(
-      products.map((product) => {
-        return product.create(product);
+      ProductsData.map((product) => {
+        return Products.create(product);
       })
     );
   } catch (err) {
