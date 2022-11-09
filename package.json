@@ -344,11 +344,11 @@
     "wrappy": "^1.0.2",
     "xtend": "^4.0.2",
     "yallist": "^4.0.0",
-    "yarn": "^1.22.19"
+
   },
   "devDependencies": {},
   "scripts": {
-    "seed": "seed.js"
+    "seed": "node seed.js"
   },
   "repository": {
     "type": "git",
