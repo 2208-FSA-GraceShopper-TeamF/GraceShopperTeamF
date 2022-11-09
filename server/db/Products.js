@@ -9,13 +9,6 @@ const Products = db.define("Products", {
       notEmpty: true,
     },
   },
-  color: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    validate: {
-      notEmpty: true,
-    },
-  },
   price: {
     type: Sequelize.DOUBLE,
     allowNull: false,
@@ -30,6 +23,13 @@ const Products = db.define("Products", {
     validate: {
       notEmpty: true,
       min: 0,
+    },
+    color: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
     },
   },
   imageUrl: {
