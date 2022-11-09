@@ -8216,9 +8216,29 @@ var selectSingle = function selectSingle(state) {
 /*!****************************!*\
   !*** ./src/store/index.js ***!
   \****************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /mnt/b/Kevin/Desktop/Fullstack/SeniorPhase/GraceShopperTeamF/src/store/index.js: Unexpected token (2:1)\n\n\u001b[0m \u001b[90m 1 |\u001b[39m \u001b[36mimport\u001b[39m { configureStore } \u001b[36mfrom\u001b[39m \u001b[32m\"@reduxjs/toolkit\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 2 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 3 |\u001b[39m \u001b[36mimport\u001b[39m { singleProductSlice } \u001b[36mfrom\u001b[39m \u001b[32m\"../reducers/singleProductSlice\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 |\u001b[39m \u001b[36mimport\u001b[39m { productSlice } \u001b[36mfrom\u001b[39m \u001b[32m\"../reducers/productSlice\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 5 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n    at instantiate (/mnt/b/Kevin/Desktop/Fullstack/SeniorPhase/GraceShopperTeamF/node_modules/@babel/parser/lib/index.js:67:32)\n    at constructor (/mnt/b/Kevin/Desktop/Fullstack/SeniorPhase/GraceShopperTeamF/node_modules/@babel/parser/lib/index.js:364:12)\n    at JSXParserMixin.raise (/mnt/b/Kevin/Desktop/Fullstack/SeniorPhase/GraceShopperTeamF/node_modules/@babel/parser/lib/index.js:3364:19)\n    at JSXParserMixin.unexpected (/mnt/b/Kevin/Desktop/Fullstack/SeniorPhase/GraceShopperTeamF/node_modules/@babel/parser/lib/index.js:3397:16)\n    at JSXParserMixin.jsxParseIdentifier (/mnt/b/Kevin/Desktop/Fullstack/SeniorPhase/GraceShopperTeamF/node_modules/@babel/parser/lib/index.js:7019:12)\n    at JSXParserMixin.jsxParseNamespacedName (/mnt/b/Kevin/Desktop/Fullstack/SeniorPhase/GraceShopperTeamF/node_modules/@babel/parser/lib/index.js:7027:23)\n    at JSXParserMixin.jsxParseElementName (/mnt/b/Kevin/Desktop/Fullstack/SeniorPhase/GraceShopperTeamF/node_modules/@babel/parser/lib/index.js:7037:21)\n    at JSXParserMixin.jsxParseOpeningElementAt (/mnt/b/Kevin/Desktop/Fullstack/SeniorPhase/GraceShopperTeamF/node_modules/@babel/parser/lib/index.js:7123:22)\n    at JSXParserMixin.jsxParseElementAt (/mnt/b/Kevin/Desktop/Fullstack/SeniorPhase/GraceShopperTeamF/node_modules/@babel/parser/lib/index.js:7150:33)\n    at JSXParserMixin.jsxParseElement (/mnt/b/Kevin/Desktop/Fullstack/SeniorPhase/GraceShopperTeamF/node_modules/@babel/parser/lib/index.js:7220:17)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+/* harmony import */ var _reducers_singleProductSlice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../reducers/singleProductSlice */ "./src/reducers/singleProductSlice.js");
+/* harmony import */ var _reducers_productSlice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/productSlice */ "./src/reducers/productSlice.js");
+/* harmony import */ var _reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/cartSlice */ "./src/reducers/cartSlice.js");
+
+
+
+
+var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_3__.configureStore)({
+  reducer: {
+    products: _reducers_productSlice__WEBPACK_IMPORTED_MODULE_1__["default"],
+    singleProductStore: _reducers_singleProductSlice__WEBPACK_IMPORTED_MODULE_0__["default"],
+    cartStore: _reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (store);
 
 /***/ }),
 
@@ -47993,7 +48013,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components */ "./src/components/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store */ "./src/store/index.js");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_store__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 
 
@@ -48005,9 +48024,9 @@ __webpack_require__.r(__webpack_exports__);
 var container = document.getElementById("root");
 var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
 root.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__.Provider, {
-  store: (_store__WEBPACK_IMPORTED_MODULE_4___default())
+  store: _store__WEBPACK_IMPORTED_MODULE_4__["default"]
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_2__.Main, null)))));
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((_store__WEBPACK_IMPORTED_MODULE_4___default()));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_store__WEBPACK_IMPORTED_MODULE_4__["default"]);
 })();
 
 /******/ })()
