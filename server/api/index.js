@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 });
 
 //***SPECIFIC ROUTES ***//
-router.use("/examples", require("./examples"));
+router.use("/products", require("./products"));
 
 //If route is not set up properly the this error will trigger
 router.use((req, res, next) => {

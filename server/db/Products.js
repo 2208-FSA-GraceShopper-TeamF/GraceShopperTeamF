@@ -20,17 +20,17 @@ const Products = db.define("Products", {
     type: Sequelize.DOUBLE,
     allowNull: false,
     validate: {
-      notEmptry: true,
+      notEmpty: true,
       min: 0.01,
-    }
+    },
   },
   quantity: {
     type: Sequelize.INTEGER,
     allowNull: false,
     validate: {
-      notEmptry: true,
+      notEmpty: true,
       min: 0,
-    }
+    },
   },
   imageUrl: {
     type: Sequelize.TEXT,

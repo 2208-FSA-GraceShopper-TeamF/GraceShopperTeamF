@@ -3,10 +3,9 @@ import { NavLink } from "react-router-dom";
 import { AllExamples } from "./index";
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectCart } from "../reducers/cartSlice";
 
 const Main = () => {
-  const items = useSelector(selectCart);
+  const items = useSelector();
   const itemCount = items.length;
   return (
     <div>
