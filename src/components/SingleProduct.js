@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { Link, Route, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSingleProduct } from "../reducers/singleProductSlice";
+import { fetchSingleProduct, selectSingle } from "../reducers/singleProductSlice";
 
 const SingleProduct = () => {
     const { id } =  useParams()
 
-    const product = useSelector((state) => {return state.singleProductStore.singleProduct})
+    const product = useSelector(selectSingle)
 
     const dispatch = useDispatch()
 

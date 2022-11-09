@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProducts, fetchProducts } from "../reducers/productSlice";
+import { addToCart } from "../reducers/cartSlice";
 
 //import all neccesary thunks!
 
@@ -15,7 +16,7 @@ const AllProducts = () => {
 
   /**handle delete fn */
   const add2Cart = async (product) => {
-    dispatch(/**add thunk */);
+    dispatch(addToCart(product));
   };
 
   return (
