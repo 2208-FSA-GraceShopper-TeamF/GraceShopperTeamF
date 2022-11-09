@@ -1,12 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { AllProducts } from "./index";
+import { AllProducts, SingleProduct } from "./index";
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Main = () => {
-  const items = useSelector();
-  const itemCount = items.length;
+  // const items = useSelector();
+  // const itemCount = items.length;
   return (
     <div>
       <nav className="main-navbar">
@@ -28,7 +28,7 @@ const Main = () => {
             }
           />
           <Route
-            path="/:id"
+            path="/products/:id"
             element={
               <>
                 <SingleProduct />

@@ -19,7 +19,7 @@ const productSlice = createSlice({
   reducers: {},
 
   extraReducers: (builder) => {
-    builder.addCase(fetchExamples.fulfilled, (state, action) => {
+    builder.addCase(fetchProducts.fulfilled, (state, action) => {
       return { products: action.payload };
     });
   },

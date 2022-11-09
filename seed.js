@@ -11,8 +11,7 @@ const ProductsData = [
     size: 10,
     description: "This is a description",
     quantity: 9,
-    imageUrl:
-      "https://res.cloudinary.com/business-products/image/upload/v1667199533/products/images/large/LTM7102--d57bb153-85be-47fe-9574-b315a56bef6d.webp",
+    imageUrl: "",
   },
   {
     name: "10 oz. Ringneck",
@@ -30,8 +29,7 @@ const ProductsData = [
     size: 12,
     description: "This is a description",
     quantity: 9,
-    imageUrl:
-      "https://res.cloudinary.com/business-products/image/upload/v1667199718/products/images/large/LTM852--62e32c27-7287-404b-9e05-d77b251940a1.webp",
+    imageUrl: "",
   },
   {
     name: "12 oz. Wine tumbler",
@@ -76,8 +74,7 @@ const ProductsData = [
     size: 20,
     description: "This is a description",
     quantity: 9,
-    imageUrl:
-      "https://res.cloudinary.com/business-products/image/upload/v1667199582/products/images/large/LTM7216--d45636af-814c-4834-931e-a8bfa9866940.webp",
+    imageUrl: "",
   },
   {
     name: "20 oz. Ringneck",

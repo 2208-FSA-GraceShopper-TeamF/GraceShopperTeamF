@@ -46,7 +46,10 @@
     "yarn": "^1.22.19"
   },
   "scripts": {
-    "seed": "seed.js"
+    "start": "npm run build-watch & npm run start-server ",
+    "build-watch": "webpack -w",
+    "start-server": "nodemon --watch server -e js,html server/index.js",
+    "seed": "node seed.js"
   },
   "repository": {
     "type": "git",
