@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {selectProducts, fetchProducts} from "./productsSlice";
+import { selectProducts, fetchProducts } from "./productsSlice";
 
 //import all neccesary thunks!
 
@@ -14,9 +14,9 @@ const AllProducts = () => {
   }, []);
 
   /**handle delete fn */
- const add2Cart = async (product) => {
+  const add2Cart = async (product) => {
     dispatch(/**add thunk */);
- }
+  };
 
   return (
     <>
@@ -26,12 +26,12 @@ const AllProducts = () => {
       <div className="products">
         {products.map((product) => (
           <div key={product.id} className="product">
-            <h2>
-              {product.name}
-            </h2>
+            <h2>{product.name}</h2>
             <img src={product.imageUrl} />
-            <h2>{product.size} - ${product.price}</h2>
-            <button id={product.id} onClick={ add2Cart(product)}>
+            <h2>
+              {product.size} - ${product.price}
+            </h2>
+            <button id={product.id} onClick={add2Cart(product)}>
               +
             </button>
           </div>
