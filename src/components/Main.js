@@ -11,7 +11,7 @@ const Main = () => {
     <div>
       <nav className="main-navbar">
         <div>
-          <NavLink className={"home"} to="/examples">
+          <NavLink className={"home"} to="/products">
             Home
           </NavLink>
         </div>
@@ -20,10 +20,10 @@ const Main = () => {
         <h1 className="main-header"></h1>
         <Routes>
           <Route
-            path="/examples"
+            path="/products"
             element={
               <>
-                <AllExamples />
+                <AllProducts />
               </>
             }
           />

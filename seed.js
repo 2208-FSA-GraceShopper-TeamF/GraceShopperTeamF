@@ -24,7 +24,7 @@ const ProductsData = [
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7111.png",
   },
   {
-    name: "12 oz. Wine example",
+    name: "12 oz. Wine tumbler",
     color: "Black",
     price: 9.99,
     size: 12,
@@ -34,7 +34,7 @@ const ProductsData = [
       "https://res.cloudinary.com/business-products/image/upload/v1667199718/products/images/large/LTM852--62e32c27-7287-404b-9e05-d77b251940a1.webp",
   },
   {
-    name: "12 oz. Wine example",
+    name: "12 oz. Wine tumbler",
     color: "Green",
     price: 9.99,
     size: 12,
