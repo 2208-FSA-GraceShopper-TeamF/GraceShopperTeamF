@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Products } = require("../db");
+const { Products, Cart } = require("../db");
 
 // All routes in here start with /api/Products go here
 
@@ -23,6 +23,17 @@ router.get("/:id", async (req, res, next) => {
     next(error);
   }
 });
+
+// //gets all items in the cart
+// router.get("/cart", async (req, res, next) => {
+//   try{
+//     res.send(await Cart.findAll({ include: req.params.productId}))
+//   }
+//   catch(error) {
+//     console.log("Error in /api/cart", error)
+//     next(error)
+//   }
+// });
 
 //edits a single Products from the db
 router.put("/:id", async (req, res, next) => {
