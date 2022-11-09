@@ -27,6 +27,14 @@ const Main = () => {
               </>
             }
           />
+          <Route
+            path="/:id"
+            element={
+              <>
+                <SingleProduct />
+              </>
+            }
+          />
         </Routes>
       </main>
       <div className="footer"></div>
