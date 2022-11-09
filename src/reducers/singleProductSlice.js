@@ -5,13 +5,15 @@ const initialState = {
   singleProduct: {},
 };
 
-export const fetchSingleProduct = createAsyncThunk(
-  "fetchSingleProduct",
-  async (productId) => {
-    const { data } = await axios.get(`/api/products/${productId}`);
-    return data;
-  }
-);
+export const fetchSingleProduct = createAsyncThunk("fetchSingleProduct", async (productId) => {
+    try{
+    const { data } = await axios.get(`/api/products/${productId}`)
+    return data
+    }
+    catch(error){
+        console.log("Error in /api/products/:id", error)
+    }
+});
 
 const singleProductSlice = createSlice({
   name: "singleProduct",

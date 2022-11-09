@@ -1,10 +1,6 @@
-"use strict";
 const express = require("express");
 const router = express.Router();
 
-//THIS IS YOUR ROUTER! SET UP YOUR ROUTES!//
-
-//If no routes input dv view will display this message
 router.get("/", (req, res) => {
   res.send("All routes in here start with API");
 });

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectProducts, fetchProducts } from "./productsSlice";
+import { selectProducts, fetchProducts } from "../reducers/productSlice";
 
 //import all neccesary thunks!
 
