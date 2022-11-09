@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { Products } = require("../db");
 
-// All routes in here start with /api/Productss go here
+// All routes in here start with /api/Products go here
 
 //returns all Productss from the db
 router.get("/", async (req, res, next) => {
