@@ -7832,7 +7832,7 @@ var AllProducts = function AllProducts() {
   /**handle delete fn */
   var add2Cart = function add2Cart(product) {
     console.log(product);
-    console.log('cart', cart);
+    console.log("cart", cart);
     dispatch((0,_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_3__.addToCart)(product));
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
