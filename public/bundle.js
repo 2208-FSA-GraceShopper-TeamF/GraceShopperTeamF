@@ -8054,6 +8054,7 @@ var cartSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
   initialState: initialState,
   reducers: {
     addToCart: function addToCart(state, action) {
+      console.log(state);
       state.push(action.payload);
     }
     // removeItem: (state, action) => {
@@ -8063,7 +8064,7 @@ var cartSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
 });
 
 var cartSelect = function cartSelect(state) {
-  return state.products.products;
+  return state.cart.products;
 };
 var addToCart = cartSlice.actions.addToCart;
 
