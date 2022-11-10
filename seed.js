@@ -10,7 +10,7 @@ const ProductsData = [
     price: 12.99,
     size: 10,
     description: "This is a description",
-    quantity: 9,
+    inventory: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7111.png",
   },
 
@@ -20,7 +20,7 @@ const ProductsData = [
     price: 9.99,
     size: 12,
     description: "This is a description",
-    quantity: 9,
+    inventory: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM865.png",
   },
   {
@@ -29,7 +29,7 @@ const ProductsData = [
     price: 11.99,
     size: 15,
     description: "This is a description",
-    quantity: 9,
+    inventory: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LCM102.png",
   },
   {
@@ -38,7 +38,7 @@ const ProductsData = [
     price: 11.99,
     size: 15,
     description: "This is a description",
-    quantity: 9,
+    inventory: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LCM113.png",
   },
   {
@@ -47,7 +47,7 @@ const ProductsData = [
     price: 11.99,
     size: 15,
     description: "This is a description",
-    quantity: 9,
+    inventory: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LCM112.png",
   },
 
@@ -57,7 +57,7 @@ const ProductsData = [
     price: 13.99,
     size: 20,
     description: "This is a description",
-    quantity: 9,
+    inventory: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7219.png",
   },
   {
@@ -66,7 +66,7 @@ const ProductsData = [
     price: 13.99,
     size: 20,
     description: "This is a description",
-    quantity: 9,
+    inventory: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7214.png",
   },
   {
@@ -75,7 +75,7 @@ const ProductsData = [
     price: 16.99,
     size: 30,
     description: "This is a description",
-    quantity: 9,
+    inventory: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7316.png",
   },
   {
@@ -84,7 +84,7 @@ const ProductsData = [
     price: 16.99,
     size: 30,
     description: "This is a description",
-    quantity: 9,
+    inventory: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7317.png",
   },
   {
@@ -93,7 +93,7 @@ const ProductsData = [
     price: 16.99,
     size: 30,
     description: "This is a description",
-    quantity: 9,
+    inventory: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7318.png",
   },
 ];
