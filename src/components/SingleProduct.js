@@ -23,7 +23,7 @@ const SingleProduct = () => {
       <h1>Name: {product.name}</h1>
       <h2>Price: {product.price}</h2>
       <h2>Color: {product.color}</h2>
-      <h3>Quantity: {product.quantity}</h3>
+      <h3>In Stock: {product.inventory}</h3>
       <p>Description: {product.description}</p>
       <button>Add to Cart</button>
     </div>
