@@ -6,15 +6,6 @@ const { db, Products } = require("./server/db");
 const ProductsData = [
   {
     name: "10 oz. Ringneck",
-    color: "Black",
-    price: 12.99,
-    size: 10,
-    description: "This is a description",
-    quantity: 9,
-    imageUrl: "",
-  },
-  {
-    name: "10 oz. Ringneck",
     color: "Navy Blue",
     price: 12.99,
     size: 10,
@@ -22,15 +13,7 @@ const ProductsData = [
     quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LTM7111.png",
   },
-  {
-    name: "12 oz. Wine tumbler",
-    color: "Black",
-    price: 9.99,
-    size: 12,
-    description: "This is a description",
-    quantity: 9,
-    imageUrl: "",
-  },
+
   {
     name: "12 oz. Wine tumbler",
     color: "Green",
@@ -67,15 +50,7 @@ const ProductsData = [
     quantity: 9,
     imageUrl: "https://shop.jdsindustries.com/site_images/small/LCM112.png",
   },
-  {
-    name: "20 oz. Ringneck",
-    color: "Black",
-    price: 13.99,
-    size: 20,
-    description: "This is a description",
-    quantity: 9,
-    imageUrl: "",
-  },
+
   {
     name: "20 oz. Ringneck",
     color: "Olive Green",
