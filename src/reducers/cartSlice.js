@@ -1,14 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const initialState = {
-  products: [],
-};
+const initialState = [];
+
 
 const cartSlice = createSlice({
-  name: "cart",
+  name: "cartStore",
   initialState,
   reducers: {
     addToCart: (state, action) => {
+      console.log(action.payload);
       state.push(action.payload);
     },
     // removeItem: (state, action) => {
@@ -18,7 +18,7 @@ const cartSlice = createSlice({
 });
 
 export const cartSelect = (state) => {
-    return state.cart.products
+    return state.cartStore
 };
 
 export const { addToCart } = cartSlice.actions;
