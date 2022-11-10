@@ -11,10 +11,21 @@ const cartSlice = createSlice({
       console.log(action.payload);
       state.push(action.payload);
     },
-    // removeFromCart: (state, action) => {
-    //     const data = state.filter((item) => item.id !== action.payload)
-    //     return data;
-    // }
+    removeFromCart: (state, action) => {
+      console.log(state);
+      console.log('action.payload', action.payload);
+      // const data = state.filter((item) => {
+      //   console.log(item.id);
+      //   item.id !== action.payload
+      //   console.log('action.payload.id', action.payload.id);
+      //   console.log('data:', data);
+      //   state = data;
+      //   return state;
+      // });
+        state = action.payload;
+        console.log('state', state);
+        return state;
+    }
   },
 });
 
