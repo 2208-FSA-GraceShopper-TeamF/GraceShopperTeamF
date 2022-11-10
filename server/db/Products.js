@@ -34,6 +34,7 @@ const Products = db.define("Products", {
   },
   imageUrl: {
     type: Sequelize.TEXT,
+    allowNull: false,
     defaultValue:
       "https://c8.alamy.com/comp/2EAK9WN/cartoon-cup-of-tea-with-happy-smiling-face-isolated-on-white-2EAK9WN.jpg",
   },
