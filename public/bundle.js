@@ -7876,12 +7876,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var Cart = function Cart() {
   var cartItems = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__.cartSelect);
-  var dispatch = react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch;
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   var remove = function remove(product) {
     console.log('removing:', product.id);
-    cartItems.filter(function (item) {
+    var data = cartItems.filter(function (item) {
       return item.id !== product.id;
     });
+    console.log('new cart:', data);
+    dispatch((0,_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__.removeFromCart)(data));
   };
 
   // function decreaseAmount(){
@@ -7889,38 +7891,29 @@ var Cart = function Cart() {
   // }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "cart-items"
-<<<<<<< HEAD
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", null, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", null, "Image"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", null, "Price"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", null, "Quantity"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", null, cartItems.map(function (items) {
-=======
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
     className: "cart-items-header"
-  }, "Cart items"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", null, cartItems.map(function (items) {
->>>>>>> c4757d2af6ad4fefe4546ba3016f0cf6f601480a
+  }, "Cart Items"), cartItems.map(function (items) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", {
       key: items.id
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, items.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
       src: items.imageUrl,
       width: "100px",
       height: "100px"
-<<<<<<< HEAD
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, items.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
       name: "count",
       type: "number",
       min: "1",
-      max: items.quantity,
+      max: items.inventory,
       defaultValue: "1"
     }), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
       onClick: function onClick() {
         remove(items);
       }
     }, "X")));
-  }))));
-=======
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, items.price));
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "cart-buy-btn"
   }, "Checkout"))));
->>>>>>> c4757d2af6ad4fefe4546ba3016f0cf6f601480a
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Cart);
 
@@ -8021,7 +8014,7 @@ var SingleProduct = function SingleProduct() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     src: product.imageUrl,
     className: "singleProductImg"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Name: ", product.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Price: ", product.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Color: ", product.color), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Quantity: ", product.quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Description: ", product.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", null, "Add to Cart"));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Name: ", product.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Price: ", product.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Color: ", product.color), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "In Stock: ", product.inventory), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Description: ", product.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", null, "Add to Cart"));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleProduct);
 
@@ -8076,14 +8069,24 @@ var cartSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
     addToCart: function addToCart(state, action) {
       console.log(action.payload);
       state.push(action.payload);
+    },
+    removeFromCart: function removeFromCart(state, action) {
+      console.log(state);
+      console.log('action.payload', action.payload);
+      // const data = state.filter((item) => {
+      //   console.log(item.id);
+      //   item.id !== action.payload
+      //   console.log('action.payload.id', action.payload.id);
+      //   console.log('data:', data);
+      //   state = data;
+      //   return state;
+      // });
+      state = action.payload;
+      console.log('state', state);
+      return state;
     }
-    // removeFromCart: (state, action) => {
-    //     const data = state.filter((item) => item.id !== action.payload)
-    //     return data;
-    // }
   }
 });
-
 var cartSelect = function cartSelect(state) {
   return state.cartStore;
 };
