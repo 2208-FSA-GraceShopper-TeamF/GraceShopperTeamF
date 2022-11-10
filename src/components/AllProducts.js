@@ -2,11 +2,14 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProducts, fetchProducts } from "../reducers/productSlice";
 import { addToCart } from "../reducers/cartSlice";
+import {cartSelect } from "../reducers/cartSlice";
 
 //import all neccesary thunks!
 
 const AllProducts = () => {
   const products = useSelector(selectProducts);
+  const cart = useSelector(cartSelect);
+
   const dispatch = useDispatch();
 
   // ** Loads thunk after page loads once, input your thunk! **/
@@ -15,7 +18,9 @@ const AllProducts = () => {
   }, []);
 
   /**handle delete fn */
-  const add2Cart = async (product) => {
+  const add2Cart = (product) => {
+    console.log(product);
+    console.log('cart', cart);
     dispatch(addToCart(product));
   };
 
@@ -32,7 +37,7 @@ const AllProducts = () => {
             <h2>
               {product.size} - ${product.price}
             </h2>
-            <button id={product.id} onClick={add2Cart(product)}>
+            <button id={product.id} onClick={() => {add2Cart(product)}}>
               +
             </button>
           </div>
