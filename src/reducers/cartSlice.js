@@ -18,7 +18,7 @@ const cartSlice = createSlice({
 });
 
 export const cartSelect = (state) => {
-    return state.products.products
+    return state.cart.products
 };
 
 export const { addToCart } = cartSlice.actions;
