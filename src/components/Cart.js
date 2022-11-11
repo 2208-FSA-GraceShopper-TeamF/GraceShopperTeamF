@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cartSelect, removeFromCart } from "../reducers/cartSlice";
@@ -16,9 +16,17 @@ const Cart = () => {
     dispatch(removeFromCart(data));
   };
 
-  // function decreaseAmount(){
+  // const inputVal = document.getElementById(`${cartItems.id}`);
 
-  // }
+  // const updateInput = (itemsQuantity, inputValue) => {
+  //   if (itemsQuantity === inputValue) {
+  //     return items.quantity;
+  //   } else {
+  //     items.quantity = inputValue;
+  //     return items.quantity;
+  //   }
+  // };
+
   return (
     <div className="cart-items">
       <table>
@@ -26,6 +34,13 @@ const Cart = () => {
           <h2 className="cart-items-header">Cart Items</h2>
 
           {cartItems.map((items) => {
+            const [quantity, setQuantity] = useState(1);
+
+            let getInputValue = (val) => {
+              // 👇 Get input value from "event"
+              let newVal = val.target.value;
+              setQuantity(newVal);
+            };
             return (
               <tr key={items.id}>
                 <td>{items.name}</td>
@@ -41,12 +56,14 @@ const Cart = () => {
                                         }}><</button> */}
                   {/* {items.quantity} */}
                   <input
+                    id={items.id}
                     name="count"
                     type="number"
                     min="0"
                     max={items.inventory}
-                    defaultValue = {items.quantity}
-                  ></input>{" "}
+                    defaultValue={quantity}
+                    onChange={getInputValue}
+                  ></input>
                   {/**adjust to account for 0 item quantity */}
                 </td>
                 <td>
@@ -62,7 +79,7 @@ const Cart = () => {
             );
           })}
           <Link to="/checkout">
-          <button className="cart-buy-btn">Checkout</button>
+            <button className="cart-buy-btn">Checkout</button>
           </Link>
         </tbody>
       </table>
