@@ -7845,7 +7845,7 @@ var AllProducts = function AllProducts() {
       className: "all-products-img",
       src: product.imageUrl
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, product.size, " - $", product.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-      "class": "add-to-cart-btn",
+      className: "add-to-cart-btn",
       id: product.id,
       onClick: function onClick() {
         add2Cart(product);
