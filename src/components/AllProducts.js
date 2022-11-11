@@ -37,12 +37,13 @@ const AllProducts = () => {
               {product.size} - ${product.price}
             </h2>
             <button
+              className="add-to-cart-btn"
               id={product.id}
               onClick={() => {
                 add2Cart(product);
               }}
             >
-              +
+              Add to cart
             </button>
           </div>
         ))}
