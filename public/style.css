@@ -110,3 +110,8 @@ tbody {
 td {
   width: 50%;
 }
+
+.hiro-img {
+  width: 100%;
+  height: auto;
+}
