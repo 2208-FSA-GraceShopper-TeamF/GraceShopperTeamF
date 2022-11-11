@@ -17,6 +17,14 @@ const Products = db.define("Products", {
       min: 0.01,
     },
   },
+  quantity: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+      min: 0,
+    }
+  },
   inventory: {
     type: Sequelize.INTEGER,
     allowNull: false,
