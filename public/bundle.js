@@ -7904,9 +7904,9 @@ var Cart = function Cart() {
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, items.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
       name: "count",
       type: "number",
-      min: "1",
+      min: "0",
       max: items.inventory,
-      defaultValue: "1"
+      defaultValue: items.quantity
     }), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
       onClick: function onClick() {
         remove(items);
@@ -8104,9 +8104,25 @@ var cartSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
   initialState: initialState,
   reducers: {
     addToCart: function addToCart(state, action) {
-      console.log(action.payload);
-      state.push(action.payload);
+      var item = state.find(function (p) {
+        return p.id === action.payload.id;
+      });
+      if (item) {
+        {
+          item.quantity++;
+        }
+        {
+          item.price + item.price;
+        }
+        console.log("item quantity", item.quantity);
+      } else {
+        state.push(action.payload);
+      }
+
+      // console.log(action.payload);
+      // state.push(action.payload);
     },
+
     removeFromCart: function removeFromCart(state, action) {
       console.log(state);
       console.log('action.payload', action.payload);

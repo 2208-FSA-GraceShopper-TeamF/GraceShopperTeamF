@@ -42,9 +42,9 @@ const Cart = () => {
                   <input
                     name="count"
                     type="number"
-                    min="1"
+                    min="0"
                     max={items.inventory}
-                    defaultValue="1"
+                    defaultValue = {items.quantity}
                   ></input>{" "}
                   {/**adjust to account for 0 item quantity */}
                 </td>
