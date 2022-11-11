@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cartSelect, removeFromCart } from "../reducers/cartSlice";
 
@@ -60,7 +61,9 @@ const Cart = () => {
               </tr>
             );
           })}
+          <Link to="/checkout">
           <button className="cart-buy-btn">Checkout</button>
+          </Link>
         </tbody>
       </table>
     </div>
