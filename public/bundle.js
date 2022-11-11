@@ -7845,11 +7845,12 @@ var AllProducts = function AllProducts() {
       className: "all-products-img",
       src: product.imageUrl
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, product.size, " - $", product.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      "class": "add-to-cart-btn",
       id: product.id,
       onClick: function onClick() {
         add2Cart(product);
       }
-    }, "+"));
+    }, "Add to cart"));
   })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AllProducts);
@@ -7878,11 +7879,11 @@ var Cart = function Cart() {
   var cartItems = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__.cartSelect);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   var remove = function remove(product) {
-    console.log('removing:', product.id);
+    console.log("removing:", product.id);
     var data = cartItems.filter(function (item) {
       return item.id !== product.id;
     });
-    console.log('new cart:', data);
+    console.log("new cart:", data);
     dispatch((0,_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__.removeFromCart)(data));
   };
 
@@ -7942,8 +7943,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Main = function Main() {
-  // const items = useSelector();
-  // const itemCount = items.length;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "bodyClass"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
