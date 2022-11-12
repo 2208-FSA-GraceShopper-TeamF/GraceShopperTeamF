@@ -7902,7 +7902,7 @@ var Cart = function Cart() {
     className: "cart-items-header"
   }, "Cart Items"), cartItems.map(function (items) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      "class": "cart-items-row",
+      className: "cart-items-row",
       key: items.id
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
       className: "cart-item-cell"
