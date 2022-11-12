@@ -27,7 +27,7 @@ const Cart = () => {
 
           {cartItems.map((items) => {
             return (
-              <div class="cart-items-row" key={items.id}>
+              <div className="cart-items-row" key={items.id}>
                 <h3 className="cart-item-cell">{items.name}</h3>
                 <h3>
                   <img src={items.imageUrl} width="100px" height="100px" />
