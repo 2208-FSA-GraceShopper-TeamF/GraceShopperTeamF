@@ -1,18 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { cartSelect, removeFromCart } from "../reducers/cartSlice";
+import {
+  cartSelect,
+  removeFromCart,
+  editProductAsync,
+  updateCart,
+} from "../reducers/cartSlice";
 
 const Cart = () => {
   let cartItems = useSelector(cartSelect);
-
   const dispatch = useDispatch();
+  const id = useParams;
+
+  //Lines 16-26 to update cart input and pass new quantity to backend
+
+  const handleChange = (e, id) => {
+    dispatch(updateCart({ quantity: e.target.value, id }));
+  };
 
   const remove = (product) => {
     console.log("removing:", product.id);
     const data = cartItems.filter((item) => item.id !== product.id);
     console.log("new cart:", data);
-
     dispatch(removeFromCart(data));
   };
 
@@ -34,13 +44,6 @@ const Cart = () => {
           <h2 className="cart-items-header">Cart Items</h2>
 
           {cartItems.map((items) => {
-            const [quantity, setQuantity] = useState(1);
-
-            let getInputValue = (val) => {
-              // 👇 Get input value from "event"
-              let newVal = val.target.value;
-              setQuantity(newVal);
-            };
             return (
               <tr key={items.id}>
                 <td>{items.name}</td>
@@ -61,8 +64,8 @@ const Cart = () => {
                     type="number"
                     min="0"
                     max={items.inventory}
-                    defaultValue={quantity}
-                    onChange={getInputValue}
+                    defaultValue={items.quantity}
+                    onChange={(e) => handleChange(e, items.id)}
                   ></input>
                   {/**adjust to account for 0 item quantity */}
                 </td>
