@@ -12,7 +12,6 @@ body {
   height: 10vmin;
   padding-bottom: 3vmin;
   padding-top: 3vmin;
-
   font-size: 3vmin;
   display: flex;
   justify-content: space-between;
@@ -117,6 +116,7 @@ button:hover {
   border: lightgray solid 1px;
   padding: 2vmin;
   margin-bottom: 4vmin;
+  width: 98%;
 }
 .checkout-total {
   display: flex;
@@ -161,7 +161,27 @@ button:hover {
   font-size: 3vmin;
 }
 
-.hiro-img {
-  width: 100%;
-  height: auto;
+.collections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.collection {
+  width: 20vmin;
+  height: 20vmin;
+  border: lightgray solid 1px;
+  margin: 1vmin;
+  font-size: 3vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1vmin;
+}
+.home-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vmin;
 }

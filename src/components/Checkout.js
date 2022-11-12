@@ -27,7 +27,7 @@ const Checkout = () => {
           })}
         </ul>
         <div className="checkout-total">
-          <h3 className="checkout-total">Total: ${totalPriceRdc}</h3>
+          <h3 className="checkout-total">Total: ${totalPriceRdc.toFixed(2)}</h3>
         </div>
       </div>
       <div>
