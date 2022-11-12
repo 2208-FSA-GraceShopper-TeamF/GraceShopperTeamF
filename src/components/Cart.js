@@ -30,7 +30,7 @@ const Cart = () => {
               <div className="cart-items-row" key={items.id}>
                 <h3 className="cart-item-cell">{items.name}</h3>
                 <h3>
-                  <img src={items.imageUrl} width="100px" height="100px" />
+                  <img className="cart-item-cell" src={items.imageUrl} />
                 </h3>
                 <h3 className="cart-item-cell">{items.price}</h3>
                 <h3 className="cart-item-cell">
