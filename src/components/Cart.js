@@ -1,19 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  cartSelect,
-  removeFromCart,
-  editProductAsync,
-  updateCart,
-} from "../reducers/cartSlice";
+import { cartSelect, removeFromCart, updateCart } from "../reducers/cartSlice";
 
 const Cart = () => {
   let cartItems = useSelector(cartSelect);
   const dispatch = useDispatch();
-  const id = useParams;
-
-  //Lines 16-26 to update cart input and pass new quantity to backend
+  // const id = useParams;
 
   const handleChange = (e, id) => {
     dispatch(updateCart({ quantity: e.target.value, id }));
@@ -26,38 +19,21 @@ const Cart = () => {
     dispatch(removeFromCart(data));
   };
 
-  // const inputVal = document.getElementById(`${cartItems.id}`);
-
-  // const updateInput = (itemsQuantity, inputValue) => {
-  //   if (itemsQuantity === inputValue) {
-  //     return items.quantity;
-  //   } else {
-  //     items.quantity = inputValue;
-  //     return items.quantity;
-  //   }
-  // };
-
   return (
     <div className="cart-items">
-      <table>
-        <tbody>
+      <div>
+        <div>
           <h2 className="cart-items-header">Cart Items</h2>
 
           {cartItems.map((items) => {
             return (
-              <tr key={items.id}>
-                <td>{items.name}</td>
-                <td>
+              <div class="cart-items-row" key={items.id}>
+                <h3 className="cart-item-cell">{items.name}</h3>
+                <h3>
                   <img src={items.imageUrl} width="100px" height="100px" />
-                </td>
-                <td>{items.price}</td>
-                <td>
-                  {/* <button onClick={() => {
-                                            if ({items.quantity} <= 1){
-                                                disable button
-                                            }    
-                                        }}><</button> */}
-                  {/* {items.quantity} */}
+                </h3>
+                <h3 className="cart-item-cell">{items.price}</h3>
+                <h3 className="cart-item-cell">
                   <input
                     id={items.id}
                     name="count"
@@ -68,8 +44,8 @@ const Cart = () => {
                     onChange={(e) => handleChange(e, items.id)}
                   ></input>
                   {/**adjust to account for 0 item quantity */}
-                </td>
-                <td>
+                </h3>
+                <h3>
                   <button
                     onClick={() => {
                       remove(items);
@@ -77,15 +53,20 @@ const Cart = () => {
                   >
                     X
                   </button>
-                </td>
-              </tr>
+                </h3>
+              </div>
             );
           })}
-          <Link to="/checkout">
-            <button className="cart-buy-btn">Checkout</button>
-          </Link>
-        </tbody>
-      </table>
+          <div className="cart-btns">
+            <Link to="/products">
+              <button className="cart-btn">Continue Shopping</button>
+            </Link>
+            <Link to="/checkout">
+              <button className="cart-btn">Checkout</button>
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
