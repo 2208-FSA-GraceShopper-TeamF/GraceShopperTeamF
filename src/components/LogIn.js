@@ -15,7 +15,10 @@ const LogIn = () => {
         evt.preventDefault();
         dispatch(logIn({username, password}));
         console.log('current:', username);
-        navigate("/home");
+        
+        if(username === 'admin'){
+            navigate("/admin");
+        }else navigate("/home");
     };
 
     const onChange =(evt) => {

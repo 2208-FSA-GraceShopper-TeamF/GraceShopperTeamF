@@ -8097,7 +8097,9 @@ var LogIn = function LogIn() {
       password: password
     }));
     console.log('current:', username);
-    navigate("/home");
+    if (username === 'admin') {
+      navigate("/admin");
+    } else navigate("/home");
   };
   var onChange = function onChange(evt) {
     if (evt.target.name === 'username') {
