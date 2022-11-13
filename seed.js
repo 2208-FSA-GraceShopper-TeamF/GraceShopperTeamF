@@ -1,5 +1,5 @@
 const { green, red } = require("chalk");
-const { db, Products } = require("./server/db");
+const { db, Products, User } = require("./server/db");
 
 //Start of seed data
 
@@ -98,6 +98,21 @@ const ProductsData = [
   },
 ];
 
+const UserData = [
+{
+  username: "admin",
+  password: 'admin',
+  address: 'Null',
+  email: 'admin@gc.com'
+},
+{
+  username: "guest",
+  password: 'guest',
+  address: 'Null',
+  email: 'guest@email.com'
+}
+]
+
 //End of Seed Data
 
 const seed = async () => {
@@ -107,6 +122,8 @@ const seed = async () => {
       ProductsData.map((product) => {
         return Products.create(product);
       })
+    );
+    await Promise.all( UserData.map((user) => User.create(user))
     );
   } catch (err) {
     console.log(red(err));

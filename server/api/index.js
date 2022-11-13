@@ -8,6 +8,8 @@ router.get("/", (req, res) => {
 //***SPECIFIC ROUTES ***//
 router.use("/products", require("./products"));
 
+router.use("/users", require("./users.js"));
+
 //If route is not set up properly the this error will trigger
 router.use((req, res, next) => {
   const err = new Error("API route not found!");

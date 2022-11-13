@@ -27,11 +27,28 @@ const User = db.define("User", {
     email: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
         validate: {
             notEmpty: true,
             isEmail: true,
         }
+    }},
+);
+
+User.authenticate = async({ username, password })=> {
+    const user = await User.findOne({
+      where: {
+        username,
+        password
+      }});
+
+    if(user){
+      return user.username; 
+    }else{
+        const error = Error('bad credentials');
+        error.status = 401;
+        throw error;
     }
-});
+  }
 
 module.exports = User;
