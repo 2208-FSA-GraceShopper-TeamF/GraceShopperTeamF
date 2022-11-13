@@ -185,3 +185,12 @@ button:hover {
   align-items: center;
   padding: 2vmin;
 }
+.log-in {
+  margin: 2vmin;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border: lightgray dotted 1px;
+  padding: 2vmin;
+  width: 30%;
+}

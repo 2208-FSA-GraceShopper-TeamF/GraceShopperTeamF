@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Products, Cart } = require("../db");
+const { Products} = require("../db");
 
 // All routes in here start with /api/Products go here
 

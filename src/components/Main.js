@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { AllProducts, SingleProduct, Cart, Home, Checkout } from "./index";
+import { AllProducts, SingleProduct, Cart, Home, Checkout, LogIn, currentUser} from "./index";
 import { Route, Routes } from "react-router-dom";
-import { useSelector } from "react-redux";
+
 
 const Main = () => {
   return (
@@ -64,6 +64,14 @@ const Main = () => {
             element={
               <>
                 <Checkout />
+              </>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <>
+                <LogIn />
               </>
             }
           />
