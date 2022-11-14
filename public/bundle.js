@@ -7900,8 +7900,9 @@ var Admin = function Admin() {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
+              window.location.reload(false);
               dispatch((0,_reducers_adminSlice__WEBPACK_IMPORTED_MODULE_3__.deleteProduct)(product));
-            case 1:
+            case 2:
             case "end":
               return _context2.stop();
           }
@@ -8303,12 +8304,13 @@ var LogIn = function LogIn() {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
   var onLogIn = function onLogIn(evt) {
     evt.preventDefault();
-    dispatch((0,_reducers_UserSlice__WEBPACK_IMPORTED_MODULE_2__.logIn)({
+    var userData = (0,_reducers_UserSlice__WEBPACK_IMPORTED_MODULE_2__.logIn)({
       username: username,
       password: password
-    }));
-    console.log('current:', username);
-    if (username === 'admin') {
+    });
+    console.log('userData', userData);
+    console.log('current:', userData.username, userData.password);
+    if (username === 'userData.username' && password === userData.password) {
       navigate("/admin");
     } else navigate("/home");
   };
@@ -8566,8 +8568,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addProduct": () => (/* binding */ addProduct),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "deleteProduct": () => (/* binding */ deleteProduct),
-/* harmony export */   "singleProduct": () => (/* binding */ singleProduct)
+/* harmony export */   "deleteProduct": () => (/* binding */ deleteProduct)
 /* harmony export */ });
 /* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -8582,18 +8583,18 @@ var initialState = {
   products: [],
   product: {}
 };
-var singleProduct = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createAsyncThunk)('singleProduct', /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(productId) {
-    var _yield$axios$get, data;
+var addProduct = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createAsyncThunk)('addProduct', /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(payload) {
+    var _yield$axios$post, data;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/products/".concat(productId));
+            return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/products', payload);
           case 2:
-            _yield$axios$get = _context.sent;
-            data = _yield$axios$get.data;
+            _yield$axios$post = _context.sent;
+            data = _yield$axios$post.data;
             return _context.abrupt("return", data);
           case 5:
           case "end":
@@ -8606,18 +8607,18 @@ var singleProduct = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createAsync
     return _ref.apply(this, arguments);
   };
 }());
-var addProduct = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createAsyncThunk)('addProduct', /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(payload) {
-    var _yield$axios$post, data;
+var deleteProduct = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createAsyncThunk)('deleteProduct', /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(id) {
+    var _yield$axios$delete, data;
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/products', payload);
+            return axios__WEBPACK_IMPORTED_MODULE_0___default()["delete"]("/api/products/".concat(id));
           case 2:
-            _yield$axios$post = _context2.sent;
-            data = _yield$axios$post.data;
+            _yield$axios$delete = _context2.sent;
+            data = _yield$axios$delete.data;
             return _context2.abrupt("return", data);
           case 5:
           case "end":
@@ -8630,38 +8631,11 @@ var addProduct = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createAsyncThu
     return _ref2.apply(this, arguments);
   };
 }());
-var deleteProduct = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createAsyncThunk)('deleteProduct', /*#__PURE__*/function () {
-  var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(id) {
-    var _yield$axios$delete, data;
-    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-      while (1) {
-        switch (_context3.prev = _context3.next) {
-          case 0:
-            _context3.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_0___default()["delete"]("/api/products/".concat(id));
-          case 2:
-            _yield$axios$delete = _context3.sent;
-            data = _yield$axios$delete.data;
-            return _context3.abrupt("return", data);
-          case 5:
-          case "end":
-            return _context3.stop();
-        }
-      }
-    }, _callee3);
-  }));
-  return function (_x3) {
-    return _ref3.apply(this, arguments);
-  };
-}());
 var adminSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createSlice)({
   name: 'admin',
   initialState: initialState,
   reducers: {},
   extraReducers: function extraReducers(builder) {
-    builder.addCase(singleProduct.fulfilled, function (state, action) {
-      state.product = action.payload;
-    });
     builder.addCase(addProduct.fulfilled, function (state, action) {
       state.products.push(action.payload);
     });
@@ -8933,22 +8907,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 /* harmony import */ var _reducers_singleProductSlice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../reducers/singleProductSlice */ "./src/reducers/singleProductSlice.js");
 /* harmony import */ var _reducers_productSlice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/productSlice */ "./src/reducers/productSlice.js");
 /* harmony import */ var _reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/cartSlice */ "./src/reducers/cartSlice.js");
 /* harmony import */ var _reducers_UserSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/UserSlice */ "./src/reducers/UserSlice.js");
+/* harmony import */ var _reducers_adminSlice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducers/adminSlice */ "./src/reducers/adminSlice.js");
 
 
 
 
 
-var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.configureStore)({
+
+var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_5__.configureStore)({
   reducer: {
     products: _reducers_productSlice__WEBPACK_IMPORTED_MODULE_1__["default"],
     users: _reducers_UserSlice__WEBPACK_IMPORTED_MODULE_3__["default"],
     singleProductStore: _reducers_singleProductSlice__WEBPACK_IMPORTED_MODULE_0__["default"],
-    cartStore: _reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__["default"]
+    cartStore: _reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__["default"],
+    adminSlice: _reducers_adminSlice__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (store);

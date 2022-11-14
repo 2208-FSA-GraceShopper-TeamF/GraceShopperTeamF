@@ -28,6 +28,7 @@ const Admin = () => {
     }
 
     async function handleDelete(product) {
+        window.location.reload(false)
         dispatch(deleteProduct(product))
     }
 

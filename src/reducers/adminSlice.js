@@ -6,11 +6,6 @@ const initialState = {
     product: {}
 }
 
-export const singleProduct = createAsyncThunk('singleProduct', async (productId) => {
-    const { data } = await axios.get(`/api/products/${productId}`)
-    return data
-})
-
 export const addProduct = createAsyncThunk('addProduct', async (payload) => {
     const { data } = await axios.post('/api/products', payload)
     return data
@@ -28,10 +23,6 @@ const adminSlice = createSlice({
 
     },
     extraReducers: (builder) => {
-        builder.addCase(singleProduct.fulfilled, (state, action) => {
-            state.product = action.payload
-        })
-
         builder.addCase(addProduct.fulfilled, (state, action) => {
             state.products.push(action.payload)
         })
