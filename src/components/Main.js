@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { AllProducts, SingleProduct, Cart, Home, Checkout, LogIn, currentUser} from "./index";
+import { AllProducts, SingleProduct, Cart, Home, Checkout, LogIn, currentUser, Admin} from "./index";
 import { Route, Routes } from "react-router-dom";
 
 
@@ -75,6 +75,14 @@ const Main = () => {
               </>
             }
           />
+          <Route
+            path="/admin"
+            element={
+              <>
+                <Admin />
+              </>
+            }
+            />
         </Routes>
       </main>
       <div className="footer"></div>
