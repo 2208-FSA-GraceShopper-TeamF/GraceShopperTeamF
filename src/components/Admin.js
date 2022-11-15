@@ -29,11 +29,8 @@ const Admin = () => {
     }
 
     async function handleDelete(product) {
-        return dispatch => {
-            dispatch(deleteProduct(product))
-            dispatch(fetchProducts())
-        }
-
+        dispatch(deleteProduct(product))
+        dispatch(fetchProducts())
     }
 
     return (
