@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk, createNextState } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const initialState = [];
+let initialState ={};
 
 export const logIn = createAsyncThunk('logIn', async ( credentials) => {
     try {
         const {data} = await axios.post('/api/users/login', credentials );
-        console.log("log in data:",data);
+        console.log("return data from log in :",data);
         return data;
 
     } catch (error) {
@@ -15,19 +15,19 @@ export const logIn = createAsyncThunk('logIn', async ( credentials) => {
 });
 
 const userSlice = createSlice({
-    name: "users",
+    name: "user",
     initialState,
     reducers:{},
     extraReducers: (builder) => {
-        builder.addCase(logIn.fulfilled, (state, action) => {
-            console.log('log in',action.payload);
-             state.push(action.payload);
+        builder.addCase(logIn.fulfilled, (state, {payload}) => {
+             state.user = payload;
         })
     },
 });
 
 export const currentUser = (state) => {
-    return state.users;
+    
+    return state.user.user;
 }
 
 export default userSlice.reducer;

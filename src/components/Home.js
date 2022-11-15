@@ -1,15 +1,20 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import {currentUser} from "../reducers/UserSlice"
-import { NavLink } from "react-router-dom";
+
 
 const Home = () => {
+  let greeting;
+  
   const user = useSelector(currentUser);
-  console.log('current', user);
+  if(user ){
+  greeting = `${user.username}`
+
+  }
   return (
     <>
       <div className="home-body">
-        <h1> Welcome, {user} </h1>
+        <h1> Welcome, {greeting? greeting: ''} </h1>
         <h2>Collections</h2>
         <div className="collections">
           <div className="collection">10 oz. Ringneck</div>

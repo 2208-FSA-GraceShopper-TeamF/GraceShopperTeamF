@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch,useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import  {logIn}  from "../reducers/UserSlice";
+import  {logIn, currentUser}  from "../reducers/UserSlice";
 
-/**import sign in  func */
 
 const LogIn = () => {
     const [username, setUsername] = useState('');
@@ -13,19 +12,17 @@ const LogIn = () => {
 
     const onLogIn = (evt) => {
         evt.preventDefault();
-        dispatch(logIn({username, password}));
-        console.log('current:', username);
-        
-        if(username === 'admin'){
-            navigate("/admin");
-        }else navigate("/home");
-    };
-
+       dispatch(logIn({username, password}));
+    
+        navigate("/home");
+    }
+    
     const onChange =(evt) => {
+        console.log('CHANGED');
         if (evt.target.name === 'username'){
             setUsername(evt.target.value);
         }
-
+        
         if(evt.target.name === 'password'){
             setPassword(evt.target.value);
         }
@@ -39,13 +36,8 @@ const LogIn = () => {
 
                 <label>Password:</label>
                 <input name='password' value={password} onChange={onChange}></input>
-                {/* <Link to={'/home'}>
-                
-                </Link> */}
-                <button>Log In</button>
-                
-              
-                
+
+                <button type="submit">Log In</button>
                 
             </form>
             {/* <form onSubmit={onSignUp}>

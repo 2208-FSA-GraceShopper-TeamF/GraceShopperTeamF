@@ -36,18 +36,18 @@ const User = db.define("User", {
 );
 
 User.authenticate = async({ username, password })=> {
-    const user = await User.findOne({
-      where: {
-        username,
-        password
-      }});
-
-    if(user){
-      return user.username; 
-    }else{
-        const error = Error('bad credentials');
-        error.status = 401;
-        throw error;
+    try{
+        const user = await User.findOne({
+            where: {
+              username,
+              password
+            }});
+           
+        if(user){
+            return user; 
+          }
+    }catch (error){
+       console.error(error.message);
     }
   }
 
