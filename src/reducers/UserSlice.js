@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, createNextState } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const initialState =  [];
+const initialState = [];
 
 export const logIn = createAsyncThunk('logIn', async ( credentials) => {
     try {
