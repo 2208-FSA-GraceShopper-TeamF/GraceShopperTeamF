@@ -7882,7 +7882,8 @@ var Admin = function Admin() {
                 inventory: inventory,
                 imageUrl: imageUrl
               }));
-            case 2:
+              dispatch((0,_reducers_productSlice__WEBPACK_IMPORTED_MODULE_2__.fetchProducts)());
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -7900,8 +7901,8 @@ var Admin = function Admin() {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              window.location.reload(false);
               dispatch((0,_reducers_adminSlice__WEBPACK_IMPORTED_MODULE_3__.deleteProduct)(product));
+              dispatch((0,_reducers_productSlice__WEBPACK_IMPORTED_MODULE_2__.fetchProducts)());
             case 2:
             case "end":
               return _context2.stop();
@@ -8307,7 +8308,14 @@ var LogIn = function LogIn() {
       username: username,
       password: password
     }));
+<<<<<<< HEAD
     navigate("/home");
+=======
+    console.log('current:', username);
+    if (username === 'admin') {
+      navigate("/admin");
+    } else navigate("/home");
+>>>>>>> a914534b50272c0eb7ed45d7df086144370fe11a
   };
   var onChange = function onChange(evt) {
     console.log('CHANGED');

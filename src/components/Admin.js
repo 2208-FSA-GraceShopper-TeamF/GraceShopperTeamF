@@ -25,11 +25,12 @@ const Admin = () => {
     async function handleSubmit(event) {
         event.preventDefault()
         dispatch(addProduct({ name, color, price, size, description, inventory, imageUrl }))
+        dispatch(fetchProducts())
     }
 
     async function handleDelete(product) {
-        window.location.reload(false)
         dispatch(deleteProduct(product))
+        dispatch(fetchProducts())
     }
 
     return (
