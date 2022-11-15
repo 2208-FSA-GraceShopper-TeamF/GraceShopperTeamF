@@ -24,15 +24,15 @@ const Products = db.define("Products", {
     validate: {
       notEmpty: true,
       min: 0,
-    },
-    color: {
+    }
+  },
+  color: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
-  },
   imageUrl: {
     type: Sequelize.TEXT,
     allowNull: false,

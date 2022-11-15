@@ -8,7 +8,7 @@ import adminSlice from "../reducers/adminSlice";
 const store = configureStore({
   reducer: {
     products: productSlice,
-    users: UserSlice,
+    user: UserSlice,
     singleProductStore: singleProductSlice,
     cartStore: cartSlice,
     adminSlice: adminSlice
