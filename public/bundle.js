@@ -8643,6 +8643,7 @@ var adminSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createSlice)({
       var newState = state.products.filter(function (product) {
         return product.id !== action.payload;
       });
+      console.log(newState);
       return newState;
     });
   }

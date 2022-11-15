@@ -61,8 +61,11 @@ router.put("/:id", async (req, res, next) => {
 router.delete("/:id", async (req, res, next) => {
   try {
     const removeProducts = await Products.findByPk(req.params.id);
-    await removeProducts.destroy();
-    res.send(removeProducts);
+    if(!removeProducts){
+      res.status(404).send('No Products Found!')
+      return
+    };
+    res.send(await removeProducts.destory());
   } catch (error) {
     console.log("Delete request error", error);
     next(error);

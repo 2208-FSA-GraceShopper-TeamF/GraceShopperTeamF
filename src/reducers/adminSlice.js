@@ -29,6 +29,7 @@ const adminSlice = createSlice({
 
         builder.addCase(deleteProduct.fulfilled, (state, action) => {
             const newState = state.products.filter((product) => product.id !== action.payload)
+            console.log(newState)
             return newState
         })
     }
