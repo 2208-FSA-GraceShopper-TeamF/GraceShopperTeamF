@@ -7901,11 +7901,9 @@ var Admin = function Admin() {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              return _context2.abrupt("return", function (dispatch) {
-                dispatch((0,_reducers_adminSlice__WEBPACK_IMPORTED_MODULE_3__.deleteProduct)(product));
-                dispatch((0,_reducers_productSlice__WEBPACK_IMPORTED_MODULE_2__.fetchProducts)());
-              });
-            case 1:
+              dispatch((0,_reducers_adminSlice__WEBPACK_IMPORTED_MODULE_3__.deleteProduct)(product));
+              dispatch((0,_reducers_productSlice__WEBPACK_IMPORTED_MODULE_2__.fetchProducts)());
+            case 2:
             case "end":
               return _context2.stop();
           }
