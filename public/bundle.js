@@ -7882,7 +7882,8 @@ var Admin = function Admin() {
                 inventory: inventory,
                 imageUrl: imageUrl
               }));
-            case 2:
+              dispatch((0,_reducers_productSlice__WEBPACK_IMPORTED_MODULE_2__.fetchProducts)());
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -7900,9 +7901,11 @@ var Admin = function Admin() {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              window.location.reload(false);
-              dispatch((0,_reducers_adminSlice__WEBPACK_IMPORTED_MODULE_3__.deleteProduct)(product));
-            case 2:
+              return _context2.abrupt("return", function (dispatch) {
+                dispatch((0,_reducers_adminSlice__WEBPACK_IMPORTED_MODULE_3__.deleteProduct)(product));
+                dispatch((0,_reducers_productSlice__WEBPACK_IMPORTED_MODULE_2__.fetchProducts)());
+              });
+            case 1:
             case "end":
               return _context2.stop();
           }
@@ -8304,13 +8307,12 @@ var LogIn = function LogIn() {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
   var onLogIn = function onLogIn(evt) {
     evt.preventDefault();
-    var userData = (0,_reducers_UserSlice__WEBPACK_IMPORTED_MODULE_2__.logIn)({
+    dispatch((0,_reducers_UserSlice__WEBPACK_IMPORTED_MODULE_2__.logIn)({
       username: username,
       password: password
-    });
-    console.log('userData', userData);
-    console.log('current:', userData.username, userData.password);
-    if (username === 'userData.username' && password === userData.password) {
+    }));
+    console.log('current:', username);
+    if (username === 'admin') {
       navigate("/admin");
     } else navigate("/home");
   };
