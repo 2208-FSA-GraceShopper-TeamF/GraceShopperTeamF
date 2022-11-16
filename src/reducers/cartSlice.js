@@ -31,15 +31,19 @@ const cartSlice = createSlice({
         newItem.quantity = 1;
         state.push(newItem);
       }
+    window.localStorage.setItem('localCart', JSON.stringify(state));
     },
     updateCart: (state, action) => {
       const itemIndex = state.findIndex((p) => p.id === action.payload.id);
+      console.log(action.payload);
       state[itemIndex].quantity = action.payload.quantity;
+      // window.localStorage.setItem('localCart', JSON.stringify(state[itemIndex].quantity));
     },
 
     removeFromCart: (state, action) => {
       state = action.payload;
       console.log("state", state);
+      window.localStorage.setItem('localCart', JSON.stringify(state));
       return state;
     },
   },

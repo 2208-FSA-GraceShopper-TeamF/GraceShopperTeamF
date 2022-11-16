@@ -9,6 +9,8 @@ Cart.belongsTo(User)
 Cart.hasMany(Products)
 Products.hasMany(Cart)
 
+
+
 module.exports = {
   db,
   Products,
