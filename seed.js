@@ -106,10 +106,10 @@ const UserData = [
   email: 'admin@gc.com'
 },
 {
-  username: "guest",
-  password: 'guest',
+  username: "user",
+  password: 'user',
   address: 'Null',
-  email: 'guest@email.com'
+  email: 'user@email.com'
 }
 ]
 
