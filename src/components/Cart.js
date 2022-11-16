@@ -4,7 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { cartSelect, removeFromCart, updateCart } from "../reducers/cartSlice";
 
 const Cart = () => {
-  let cartItems = useSelector(cartSelect);
+  let localItems = window.localStorage.getItem('localCart')
+  localItems = JSON.parse(localItems);
+
+  console.log('LOCAL CART',localItems);
+
+  let cartItems = localItems? localItems : useSelector(cartSelect);
+
   const dispatch = useDispatch();
   // const id = useParams;
 
