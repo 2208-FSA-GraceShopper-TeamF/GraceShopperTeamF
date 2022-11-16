@@ -33,8 +33,8 @@ const Main = () => {
             Home
           </NavLink>
           {adminPage? adminPage:''}
-          <NavLink className={"navLinks"} to="/about">
-            About
+          <NavLink className={"navLinks"} to="/products">
+            Shop
           </NavLink>
           {loggedIn}
           <NavLink className={"navLinks"} to="/cart">
