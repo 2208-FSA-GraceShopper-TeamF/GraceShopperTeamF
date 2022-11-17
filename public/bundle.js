@@ -7831,31 +7831,31 @@ var Admin = function Admin() {
   var products = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(_reducers_productSlice__WEBPACK_IMPORTED_MODULE_2__.selectProducts);
   // const adminProducts = useSelector((state) => { return state.adminProducts })
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState2 = _slicedToArray(_useState, 2),
     name = _useState2[0],
     setName = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState4 = _slicedToArray(_useState3, 2),
     color = _useState4[0],
     setColor = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState6 = _slicedToArray(_useState5, 2),
     price = _useState6[0],
     setPrice = _useState6[1];
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState8 = _slicedToArray(_useState7, 2),
     size = _useState8[0],
     setSize = _useState8[1];
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState10 = _slicedToArray(_useState9, 2),
     description = _useState10[0],
     setDescription = _useState10[1];
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState12 = _slicedToArray(_useState11, 2),
     inventory = _useState12[0],
     setInventory = _useState12[1];
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState14 = _slicedToArray(_useState13, 2),
     imageUrl = _useState14[0],
     setImageUrl = _useState14[1];
@@ -7917,6 +7917,75 @@ var Admin = function Admin() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "products"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "All Products")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "admin-add-product"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "name"
+  }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    name: "name",
+    value: name,
+    onChange: function onChange(event) {
+      return setName(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "color"
+  }, "Color"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    name: "color",
+    value: color,
+    onChange: function onChange(event) {
+      return setColor(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "price"
+  }, "Price"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    name: "price",
+    value: price,
+    onChange: function onChange(event) {
+      return setPrice(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "size"
+  }, "Size"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    name: "size",
+    value: size,
+    onChange: function onChange(event) {
+      return setSize(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "description"
+  }, "Description"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    name: "description",
+    value: description,
+    onChange: function onChange(event) {
+      return setDescription(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "inventory"
+  }, "Inventory Amount"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    name: "inventory",
+    value: inventory,
+    onChange: function onChange(event) {
+      return setInventory(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "imageUrl"
+  }, "Image Url"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    name: "imageUrl",
+    value: imageUrl,
+    onChange: function onChange(event) {
+      return setImageUrl(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "submitProductBtn",
+    type: "submit"
+  }, "Add Product")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "clearBtn",
+    type: "button",
+    onClick: function onClick() {
+      setName(""), setColor(""), setPrice(""), setSize(""), setDescription(""), setInventory(""), setImageUrl("");
+    }
+  }, "Clear"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "products"
   }, products.map(function (product) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -7927,7 +7996,7 @@ var Admin = function Admin() {
       src: product.imageUrl
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, product.size, " - $", product.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
       key: product.id,
-      to: '/admin'
+      to: "/admin"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
       className: "deleteBtn",
       type: "button",
@@ -7935,74 +8004,7 @@ var Admin = function Admin() {
         return handleDelete(product.id);
       }
     }, "Delete Product")));
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Add Product"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
-    onSubmit: handleSubmit
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-    htmlFor: "name"
-  }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    name: "name",
-    value: name,
-    onChange: function onChange(event) {
-      return setName(event.target.value);
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-    htmlFor: "color"
-  }, "Color"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    name: "color",
-    value: color,
-    onChange: function onChange(event) {
-      return setColor(event.target.value);
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-    htmlFor: "price"
-  }, "Price"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    name: "price",
-    value: price,
-    onChange: function onChange(event) {
-      return setPrice(event.target.value);
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-    htmlFor: "size"
-  }, "Size"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    name: "size",
-    value: size,
-    onChange: function onChange(event) {
-      return setSize(event.target.value);
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-    htmlFor: "description"
-  }, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    name: "description",
-    value: description,
-    onChange: function onChange(event) {
-      return setDescription(event.target.value);
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-    htmlFor: "inventory"
-  }, "Inventory Amount"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    name: "inventory",
-    value: inventory,
-    onChange: function onChange(event) {
-      return setInventory(event.target.value);
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-    htmlFor: "imageUrl"
-  }, "Image Url"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    name: "imageUrl",
-    value: imageUrl,
-    onChange: function onChange(event) {
-      return setImageUrl(event.target.value);
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    className: "submitProductBtn",
-    type: "submit"
-  }, "Add Product"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    className: "clearBtn",
-    type: "button",
-    onClick: function onClick() {
-      setName(''), setColor(''), setPrice(''), setSize(''), setDescription(''), setInventory(''), setImageUrl('');
-    }
-  }, "Clear")));
+  })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Admin);
 
@@ -8365,43 +8367,47 @@ var LogIn = function LogIn() {
       setEmail(evt.target.value);
     }
   };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "log-in"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
     onSubmit: onLogIn
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Username:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Username:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     name: "username",
     value: username,
     onChange: onChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     name: "password",
     value: password,
     onChange: onChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    "class": "sign-up-login",
     type: "submit"
-  }, "Log In"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "Log In")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "sign-up"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
     onSubmit: onSignUp
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Sign Up!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Username:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Sign Up!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Username:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     name: "username",
     value: username,
     onChange: onChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     name: "password",
     value: password,
     onChange: onChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Address:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Address:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     name: "address",
     value: address,
     onChange: onChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Email:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Email:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     name: "email",
     value: email,
     onChange: onChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    "class": "sign-up-login",
     type: "submit"
-  }, "Register")))));
+  }, "Register"))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LogIn);
 
