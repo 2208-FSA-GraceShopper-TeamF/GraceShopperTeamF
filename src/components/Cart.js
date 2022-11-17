@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { cartSelect, removeFromCart, updateCart } from "../reducers/cartSlice";
+import {
+  cartSelect,
+  getPeristedCart,
+  removeFromCart,
+  updateCart,
+} from "../reducers/cartSlice";
 
 const Cart = () => {
-  let localItems = window.localStorage.getItem('localCart')
-  localItems = JSON.parse(localItems);
-
-  console.log('LOCAL CART',localItems);
-
-  let cartItems = localItems? localItems : useSelector(cartSelect);
+  let cartItems = useSelector(cartSelect);
 
   const dispatch = useDispatch();
-  // const id = useParams;
+
+  useEffect(() => {
+    dispatch(getPeristedCart());
+  }, []);
 
   const handleChange = (e, id) => {
     dispatch(updateCart({ quantity: e.target.value, id }));
   };
 
   const remove = (product) => {
-    console.log("removing:", product.id);
-    const data = cartItems.filter((item) => item.id !== product.id);
-    console.log("new cart:", data);
-    dispatch(removeFromCart(data));
+    dispatch(removeFromCart({ product }));
   };
 
   return (

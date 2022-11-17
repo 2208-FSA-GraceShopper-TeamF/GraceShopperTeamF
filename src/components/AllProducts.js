@@ -55,7 +55,6 @@ const AllProducts = () => {
                 //   console.log('UPDATED LOCAL CART',);
                 //   }
                 // }
-                
 
                 // window.localStorage.setItem('localCart', JSON.stringify(cart));
               }}

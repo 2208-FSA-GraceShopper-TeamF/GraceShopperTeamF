@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartSelect } from "../reducers/cartSlice";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const items = useSelector(cartSelect);
@@ -49,7 +50,9 @@ const Checkout = () => {
             <p> Credit Card Number</p>
             <input className="checkout-form-input" type="text" name="name" />
           </label>
-          <button className="completePurchasBtn">Complete Purchase</button>
+          <Link to="/ThankYou">
+            <button className="completePurchasBtn">Complete Purchase</button>
+          </Link>
         </form>
       </div>
     </div>
