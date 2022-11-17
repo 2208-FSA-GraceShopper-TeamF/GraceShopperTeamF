@@ -1,17 +1,16 @@
 const Sequelize = require("sequelize");
 const db = require("./database");
 
-const Cart = db.define("Cart", {
-  userId: {
-    type: Sequelize.STRING,
-    unique: true,
+const Order = db.define("Order", {
+  cartId: {
+    type: Sequelize.INTEGER,
     allowNull: false,
     validate: {
       notEmpty: true,
     },
   },
-  products: {
-    type: Sequelize.JSONB,
+  productsId: {
+    type: Sequelize.INTEGER,
     allowNull: false,
     validate: {
       notEmpty: true,
@@ -19,4 +18,4 @@ const Cart = db.define("Cart", {
   },
 });
 
-module.exports = Cart;
+module.exports = Order;
