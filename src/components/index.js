@@ -7,3 +7,4 @@ export { default as Checkout } from "./Checkout";
 export { default as LogIn } from "./LogIn";
 export { default as Admin } from "./Admin";
 export { default as UserCart } from "./UserCart";
+export { default as ThankYou } from "./ThankYou";

@@ -1,29 +1,52 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { AllProducts, SingleProduct, Cart, Home, Checkout, LogIn, Admin} from "./index";
+import {
+  AllProducts,
+  SingleProduct,
+  Cart,
+  Home,
+  Checkout,
+  LogIn,
+  Admin,
+  ThankYou,
+} from "./index";
 import { Route, Routes } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { currentUser } from "../reducers/UserSlice";
-
+import { useDispatch, useSelector } from "react-redux";
+import { currentUser, logout } from "../reducers/UserSlice";
 
 const Main = () => {
+  const dispatch = useDispatch();
   const user = useSelector(currentUser);
-  console.log(user);
+
   let adminPage;
-  let loggedIn = <NavLink className={"navLinks"} to="/login">
-  Login
-</NavLink>;
-  if(user ){
-    loggedIn=<NavLink className={"navLinks"} to="/home">
-    Logout
-  </NavLink>;
-    if(user.username === 'admin'){
-    adminPage = <NavLink className={"navLinks"} to="/admin">
-    Admin
-  </NavLink>
+  let loggedIn = (
+    <NavLink className={"navLinks"} to="/login">
+      Login
+    </NavLink>
+  );
+  if (user) {
+    loggedIn = (
+      <NavLink
+        className={"navLinks"}
+        to="/login"
+        onClick={() => dispatch(logout())}
+      >
+        Logout
+      </NavLink>
+    );
+    if (user.username === "admin") {
+      adminPage = (
+        <NavLink className={"navLinks"} to="/admin">
+          Admin
+        </NavLink>
+      );
+    }
+  } else {
+    {
+      loggedIn;
+    }
   }
-  }
-  
+
   return (
     <div className="bodyClass">
       <nav className="main-navbar">
@@ -32,7 +55,7 @@ const Main = () => {
           <NavLink className={"navLinks"} to="/home">
             Home
           </NavLink>
-          {adminPage? adminPage:''}
+          {adminPage ? adminPage : ""}
           <NavLink className={"navLinks"} to="/products">
             Shop
           </NavLink>
@@ -100,7 +123,15 @@ const Main = () => {
                 <Admin />
               </>
             }
-            />
+          />
+          <Route
+            path="/ThankYou"
+            element={
+              <>
+                <ThankYou />
+              </>
+            }
+          />
         </Routes>
       </main>
       <div className="footer"></div>
