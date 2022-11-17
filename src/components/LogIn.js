@@ -46,35 +46,71 @@ const LogIn = () => {
 
   return (
     <>
-      <div>
+      <div className="login-body">
         <div className="log-in">
+          <h3>Login</h3>
           <form onSubmit={onLogIn}>
             <label>Username:</label>
-            <input name="username" value={username} onChange={onChange}></input>
-
+            <div>
+              <input
+                name="username"
+                value={username}
+                onChange={onChange}
+              ></input>
+            </div>
             <label>Password:</label>
-            <input name="password" value={password} onChange={onChange}></input>
-
-            <button type="submit">Log In</button>
+            <div>
+              <input
+                name="password"
+                value={password}
+                onChange={onChange}
+              ></input>
+            </div>
+            <div>
+              <button class="sign-up-login" type="submit">
+                Log In
+              </button>
+            </div>
             {/* <button onClick={showSignUp}>Create Account</button> */}
           </form>
         </div>
         <div className="sign-up">
           <form onSubmit={onSignUp}>
-            <h3>Sign Up!</h3>
+            <div>
+              <h3>Sign Up!</h3>
+            </div>
             <label>Username:</label>
-            <input name="username" value={username} onChange={onChange}></input>
+            <div>
+              <input
+                name="username"
+                value={username}
+                onChange={onChange}
+              ></input>
+            </div>
 
             <label>Password:</label>
-            <input name="password" value={password} onChange={onChange}></input>
+            <div>
+              <input
+                name="password"
+                value={password}
+                onChange={onChange}
+              ></input>
+            </div>
 
             <label>Address:</label>
-            <input name="address" value={address} onChange={onChange}></input>
+            <div>
+              <input name="address" value={address} onChange={onChange}></input>
+            </div>
 
             <label>Email:</label>
-            <input name="email" value={email} onChange={onChange}></input>
-
-            <button type="submit">Register</button>
+            <div>
+              <input name="email" value={email} onChange={onChange}></input>
+            </div>
+            <div>
+              <button class="sign-up-login" type="submit">
+                Register
+              </button>
+            </div>
           </form>
         </div>
       </div>

@@ -201,3 +201,32 @@ button:hover {
   font-size: 7vmin;
   margin-top: 20vmin;
 }
+.admin-add-product {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 2vmin;
+}
+.submitProductBtn {
+  margin-top: 1vmin;
+  width: 100%;
+}
+.clearBtn {
+  margin-top: 1vmin;
+  width: 100%;
+}
+.login-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sign-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign-up-login {
+  width: 100%;
+  margin-top: 1vmin;
+}
